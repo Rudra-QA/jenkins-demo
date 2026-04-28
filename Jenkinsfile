@@ -3,17 +3,17 @@ pipeline {
 
     stages {
 
-        stage('Run on VM1') {
+        stage('Run app on VM1') {
             agent { label 'rudra-vm1' }
             steps {
-                sh 'python3 hello.py'
+                sh 'python3 app.py'
             }
         }
 
-        stage('Run on VM2') {
+        stage('Run app on VM2') {
             agent { label 'rudra-vm2' }
             steps {
-                sh 'python3 hello.py'
+                sh 'python3 app.py'
             }
         }
     }
